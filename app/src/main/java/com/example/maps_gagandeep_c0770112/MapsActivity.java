@@ -91,13 +91,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 markers.add(marker);
                 if(previousMarker!=null)
                 {
-                    PolylineOptions polylineOptions = new PolylineOptions().add(marker.getPosition(),previousMarker.getPosition()).color(Color.RED);
+                    PolylineOptions polylineOptions = new PolylineOptions().add(marker.getPosition(),previousMarker.getPosition()).clickable(true).color(Color.RED);
                     polylines.add(mMap.addPolyline(polylineOptions));
                 }
                 previousMarker = marker;
                 if(markers.size() == POLYGON_SIDES)
                 {
-                    PolygonOptions polygonOptions = new PolygonOptions().fillColor(Color.argb((int) ((float)((float) 35/ (float) 100)*255),0,255,0)).strokeColor(Color.RED);
+                    PolygonOptions polygonOptions = new PolygonOptions().fillColor(Color.argb((int) ((float)((float) 35/ (float) 100)*255),0,255,0)).clickable(true).strokeColor(Color.RED);
                     for(Marker marker1: markers)
                     {
                         polygonOptions.add(marker1.getPosition());
@@ -185,14 +185,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 {
                     if(marker2 != null)
                     {
-                        polylineOptions = new PolylineOptions().color(Color.RED).add(marker1.getPosition(),marker2.getPosition());
+                        polylineOptions = new PolylineOptions().color(Color.RED).add(marker1.getPosition(),marker2.getPosition()).clickable(true);
                         polylines.add(mMap.addPolyline(polylineOptions));
                     }
                     marker2 = marker1;
                 }
                 if(markers.size() == POLYGON_SIDES)
                 {
-                    PolygonOptions polygonOptions = new PolygonOptions().fillColor(Color.argb((int) ((float)((float) 35/ (float) 100)*255),0,255,0)).strokeColor(Color.RED);
+                    PolygonOptions polygonOptions = new PolygonOptions().fillColor(Color.argb((int) ((float)((float) 35/ (float) 100)*255),0,255,0)).clickable(true).strokeColor(Color.RED);
                     for(Marker marker1: markers)
                     {
                         polygonOptions.add(marker1.getPosition());
@@ -234,14 +234,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 {
                     if(marker2 != null)
                     {
-                        polylineOptions = new PolylineOptions().color(Color.RED).add(marker1.getPosition(),marker2.getPosition());
+                        polylineOptions = new PolylineOptions().color(Color.RED).add(marker1.getPosition(),marker2.getPosition()).clickable(true);
                         polylines.add(mMap.addPolyline(polylineOptions));
                     }
                     marker2 = marker1;
                 }
                 if(markers.size() == POLYGON_SIDES)
                 {
-                    PolygonOptions polygonOptions = new PolygonOptions().fillColor(Color.argb((int) ((float)((float) 35/ (float) 100)*255),0,255,0)).strokeColor(Color.RED);
+                    PolygonOptions polygonOptions = new PolygonOptions().fillColor(Color.argb((int) ((float)((float) 35/ (float) 100)*255),0,255,0)).clickable(true).strokeColor(Color.RED);
                     for(Marker marker1: markers)
                     {
                         polygonOptions.add(marker1.getPosition());
