@@ -38,6 +38,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Marker previousMarker = null;
     private static final int POLYGON_SIDES = 4;
     private Marker infomarker;
+    private Polygon polygon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +102,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     {
                         polygonOptions.add(marker1.getPosition());
                     }
-                    mMap.addPolygon(polygonOptions);
+                    if(polygon!=null)
+                    {
+                        polygon.remove();
+                    }
+                    polygon = mMap.addPolygon(polygonOptions);
                 }
             }
         });
@@ -192,7 +197,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     {
                         polygonOptions.add(marker1.getPosition());
                     }
-                    mMap.addPolygon(polygonOptions);
+                    if(polygon != null)
+                    {
+                        polygon.remove();
+                    }
+                    polygon = mMap.addPolygon(polygonOptions);
                 }
             }
         });
@@ -237,7 +246,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     {
                         polygonOptions.add(marker1.getPosition());
                     }
-                    mMap.addPolygon(polygonOptions);
+                    if(polygon != null)
+                    {
+                        polygon.remove();
+                    }
+                    polygon = mMap.addPolygon(polygonOptions);
                 }
             }
         });
